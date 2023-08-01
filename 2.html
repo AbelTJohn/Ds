@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+      //2.Write a program to reverse an array in place? In place means you cannot create a new array. You have to update the original array.
+
+      function reverseArray(arr) {
+            let start = 0;
+            let end = arr.length - 1;
+
+            while (start < end) {
+                const temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
+            }
+            const myArray = [1, 2, 3, 4, 5];
+            reverseArray(myArray);
+            console.log(myArray); 
+   </script> 
+</body>
+</html>

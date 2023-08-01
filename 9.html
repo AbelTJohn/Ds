@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //9.Write a program to reverse a stack
+
+        class Stack {
+                        constructor() {
+                            this.items = [];
+                        }
+
+                        push(item) {
+                            this.items.push(item);
+                        }
+
+                        pop() {
+                            if (this.isEmpty()) {
+                            return null;
+                            }
+                            return this.items.pop();
+                        }
+
+                        isEmpty() {
+                            return this.items.length === 0;
+                        }
+
+                        size() {
+                            return this.items.length;
+                        }
+                        }
+
+                        function reverseStack(stack) {
+                        const reversedStack = new Stack();
+
+                        // Pop elements from the original stack and push them to the reversed stack
+                        while (!stack.isEmpty()) {
+                            reversedStack.push(stack.pop());
+                        }
+
+                        return reversedStack;
+                        }
+
+                            // Example usage:
+                            const originalStack = new Stack();
+                            originalStack.push(1);
+                            originalStack.push(2);
+                            originalStack.push(3);
+                            originalStack.push(4);
+
+    </script>
+</body>
+</html>

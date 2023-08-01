@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //3.Write a program to check if two strings are a rotation of each other?
+
+         function areStringsRotations(str1, str2) {
+            if (str1.length !== str2.length) {
+                return false;
+            }
+            const concatenatedStr = str1 + str1;
+            return concatenatedStr.includes(str2);
+            }
+
+            const str1 = "abcd";
+            const str2 = "cdab";
+            console.log(areStringsRotations(str1, str2)); // Output: true
+
+    </script>
+</body>
+</html>

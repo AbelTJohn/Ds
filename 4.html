@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //4. Write a program to print the first non-repeated character from a string?
+
+         function firstNonRepeatedCharacter(str) {
+            const charCount = {};
+
+            for (const char of str) {
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            for (const char of str) {
+                if (charCount[char] === 1) {
+                return char;
+                }
+            }
+            return null;
+            }
+
+                const inputString = "aabbcdeeffg";
+                const firstNonRepeated = firstNonRepeatedCharacter(inputString);
+                console.log(firstNonRepeated); // Output: "c"
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //.10 Write a program to find the smallest number using a stack.
+
+        class Stack {
+                        constructor() {
+                            this.items = [];
+                            this.minStack = []; // Stack to keep track of the minimum value
+                        }
+
+                        push(item) {
+                            this.items.push(item);
+                            // Update the minStack with the current minimum value
+                            if (this.minStack.length === 0 || item <= this.minStack[this.minStack.length - 1]) {
+                            this.minStack.push(item);
+                            }
+                        }
+
+                        pop() {
+                            if (this.isEmpty()) {
+                            return null;
+                            }
+                            const poppedItem = this.items.pop();
+                            // Update the minStack when the smallest element is removed from the stack
+                            if (poppedItem === this.minStack[this.minStack.length - 1]) {
+                            this.minStack.pop();
+                            }
+                            return poppedItem;
+                        }
+
+                        isEmpty() {
+                            return this.items.length === 0;
+                        }
+
+                        size() {
+                            return this.items.length;
+                        }
+
+                        getMin() {
+                            if (this.minStack.length === 0) {
+                            return null;
+                            }
+                            return this.minStack[this.minStack.length - 1];
+                        }
+                        }
+
+                        // Example usage:
+                        const stack = new Stack();
+                        stack.push(5);
+                        stack.push(2);
+                        stack.push(8);
+                        stack.push(1);
+
+                        console.log("Smallest number in the stack:", stack.getMin()); // Output: 1
+    </script>
+</body>
+</html>

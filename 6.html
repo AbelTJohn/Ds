@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //6.Read about infix, prefix, and postfix expressions. Write a program to convert postfix to prefix expression.
+
+         function Operator(char) {
+                    return char === '+' || char === '-' || char === '*' || char === '/';
+                    }
+
+                function postfixToPrefix(postfix) {
+                    const stack = [];
+
+                    for (let i = 0; i < postfix.length; i++) {
+                        const char = postfix[i];
+                        if (Operator(char)) {
+                        const operand2 = stack.pop();
+                        const operand1 = stack.pop();
+                        const prefixExpr = char + operand1 + operand2;
+                        stack.push(prefixExpr);
+                        } else {
+                        stack.push(char);
+                        }
+                    }
+
+                    return stack.pop();
+                 }
+                    const postfixExpression = '23+45-*';
+                    const prefixExpression = postfixToPrefix(postfixExpression);
+                    console.log(prefixExpression); // Output: "*+23-45"
+
+    </script>
+</body>
+</html>
